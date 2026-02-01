@@ -1,0 +1,233 @@
+@import url(https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap);
+/* https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined */
+
+/*---------- Default Style ----------*/
+
+:root {
+  --base-color: #ffffff;
+  --primary-text-color: #000000;
+  --secondary-text-color: #3d85c6;
+  --logo-color-1: #4e94d9;
+  --logo-color-2: #215f99;
+  --logo-color-3: #163e65;
+  
+  --w-color-header-border: #5ba4d9;
+  --w-color-nav-active: #c3dff2;
+  --w-color-nav-hover: #dbecf7;
+  --w-color-testimonial-background: #c3dff2;
+  --w-color-testimonial-icon: #5ba4d9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  color: var(--primary-text-color);
+}
+
+body {
+  background-color: var(--base-color);
+}
+
+h1,
+h2,
+h3 {
+  font-family: Comfortaa, Verdana, Geneva, Arial, sans-serif;
+}
+
+/*---------- Header ----------*/
+
+header {
+  width: 100%;
+  padding: 0.5rem min(2rem, 15%) 0;
+  border-bottom: var(--logo-color-1);
+  border-bottom-style: solid;
+  border-width: thick;
+  background-color: var(--base-color);
+  position: sticky;
+  top: 0;
+}
+
+header div {
+  width: min(100%, 1000px); /*100% width unless screen is wider than 1000px*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header img {
+  display: block;
+  width: clamp(0px, 80vw, 400px);
+}
+
+nav {
+  margin: 0.5rem auto; /*Spacing at top and bottom, centred horizontally in the header*/
+  width: min(100%, 1000px); /*100% width unless screen is wider than 1000px*/
+}
+
+nav ul {
+  display: flex;
+  gap: 0;
+  list-style-type: none; /*Removes bullet points*/
+  font-family: Comfortaa;
+}
+
+nav li {
+  display: inline-block;
+  padding: 0.4rem 0.5em;
+  width: 9.4rem;
+  text-align: center;
+  background-color: var(--base-color);
+  transition: 300ms ease;
+}
+
+nav li:hover {
+  background-color: var(--w-color-nav-hover);
+}
+
+.nav-active {
+  background-color: var(--w-color-nav-active);
+}
+
+nav a, footer a {
+  text-decoration: none;
+  color: var(--text-color); /*Removes default link colour*/
+}
+
+footer {
+  padding-bottom: 1.5rem;
+  text-align: center;
+  border-top: var(--logo-color-1);
+  border-top-style: solid;
+  border-width: thick;
+  padding-top: 0.5rem;
+}
+
+footer nav ul {
+  justify-content: center;
+}
+
+/*---------- Main Body Defaults ----------*/
+
+section {
+    margin-left: auto;
+    margin-right: auto;
+    width: min(75rem, 100%);
+    padding: min(1.2rem, 15%);
+    text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media(max-width: 1100px) {
+  .flex-container {
+    gap: 1em;
+  }
+}
+
+.text-container {
+    flex: 0 1 18em; /*Grow, Shrink, Preferred Size (flex-basis)*/
+    padding: 1em;
+}
+
+/*---------- Main Body ----------*/
+
+#tyson-intro {
+  font-size: 1.2rem;
+}
+
+#img-tyson-a {
+  object-fit: cover;
+}
+
+#img-tyson-icon {
+  margin: 1em 0 2em;
+}
+
+#oscar-testimonial {
+  background-color: var(--w-color-testimonial-background);
+  padding: 0;
+  width: 100%;
+}
+
+#oscar-testimonial .flex-container {
+  justify-content: center;
+  /* align-items: flex-start; */
+  gap: 2rem;
+}
+
+#img-oscar-testimonial {
+  flex: 1 1 0;
+  
+  /* max-height: calc(100vh - 128px); */
+  max-width: 100%;
+
+  object-fit: cover;
+  object-position: 25% 10%;
+
+  container-type: inline-size;
+  container-name: img-oscar-testimonial;
+}
+
+#oscar-testimonial .text-container {
+  flex: 1 0 25rem; /* Don't shrink, and flex-basis is 25rem. Has effect of min-width: 25rem; */
+
+  max-width: calc(50vw - 2rem); /* 50vw - gap. This can override the flex basis above... */
+  min-width: 12em; /* ...but this will override max-width */
+  max-height: min(100%, calc(100vh - 128px));
+
+  padding-left: 0;
+  padding-right: 0;
+
+  text-align: left;
+  font-size: clamp(1rem, 2rem, 16vw);
+  font-style: italic;
+
+  container-type: inline-size;
+}
+
+#oscar-testimonial .text-container > * {
+  margin-left: 20%;
+  margin-right: 10%;
+}
+
+@container (width < 35rem) { /* 34rem width at which text overflows container */
+  #oscar-testimonial .text-container > * {
+    margin-left: 2rem;
+    margin-right: 1rem;
+  }
+}
+
+#img-quote {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+#img-end-icon {
+  margin: 0.5rem 0 1rem;
+}
+
+/*---------- Events Page ----------*/
+
+#dog-show-reg .text-container {
+  flex: 1 1 30rem;
+}
+
+#dogshowform {
+  width: min(1000px, 100%);
+  height: 80vh
+}
+
+#summer-solstice {
+  padding: 1em;
+}
