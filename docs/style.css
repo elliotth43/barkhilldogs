@@ -229,7 +229,7 @@ section {
 }
 
 #img-quorn-advert {
-  padding: 1em;
+  padding: 1rem;
   max-width: clamp(20rem, 60vw, 30rem);
   height: auto;
 }
