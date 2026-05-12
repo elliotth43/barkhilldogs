@@ -228,6 +228,8 @@ section {
   height: 80vh
 }
 
-#summer-solstice {
+#img-quorn-advert {
   padding: 1em;
+  max-width: clamp(20rem, 60vw, 30rem);
+  height: auto;
 }
